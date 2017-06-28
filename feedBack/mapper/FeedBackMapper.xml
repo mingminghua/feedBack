@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huadi.feedBack.dao.FeedBackMapper">
+    <cache />
+    <select id="findHistoryByProjectId" parameterType="Integer" >
+        select * from q_qams where projectId = #{id}
+    </select>
+    <delete id="deleteFeedBack" parameterType="Integer">
+            delete from q_qams where id=#{id,jdbcType=Integer}
+    </delete>
+
+   <!-- <select id="selectUsersByids" resultType="CUser">
+        select * from users
+        <where>
+            id in
+            <foreach collection="array"  item="item" index="index"
+                     open="(" separator="," close=")">#{item}
+            </foreach>
+        </where>
+    </select>-->
+</mapper>
